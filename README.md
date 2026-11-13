@@ -45,8 +45,8 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/codegen/cpp.py:6118** - # TODO: support kernel profile on other platforms
 - [ ] **torch/_inductor/codegen/cpp.py:6283** - # TODO(jansel): look into chunk size and other schedules
 - [ ] **torch/_inductor/codegen/cpp_flex_attention_template.py:25** - # TODO: reuse cpp codegen to generate below pointwise/reduction kernels
-- [ ] **torch/_inductor/codegen/cpp_flex_attention_template.py:1650** - # TODO: use inductor IR to rewrite those fusions
-- [ ] **torch/_inductor/codegen/cpp_flex_attention_template.py:1656** - # TODO: make them general for common bmm templates
+- [ ] **torch/_inductor/codegen/cpp_flex_attention_template.py:1653** - # TODO: use inductor IR to rewrite those fusions
+- [ ] **torch/_inductor/codegen/cpp_flex_attention_template.py:1659** - # TODO: make them general for common bmm templates
 - [ ] **torch/_inductor/codegen/cpp_gemm_template.py:824** - # TODO: tune the factor here
 - [ ] **torch/_inductor/codegen/cpp_gemm_template.py:857** - # TODO: Decouple the choice of micro-kernel from cache blocking
 - [ ] **torch/_inductor/codegen/cpp_gemm_template.py:901** - # TODO(jgong5): something to tune?
@@ -118,37 +118,37 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/codegen/mps.py:244** - # TODO: Should it be converted to lambda on MacOS-15+?
 - [ ] **torch/_inductor/codegen/mps.py:390** - # TODO: Does it rely on undefined behavior?
 - [ ] **torch/_inductor/codegen/mps.py:654** - # TODO(NS): Figure out the right balance between optype casts
-- [ ] **torch/_inductor/codegen/mps.py:1240** - # TODO(malfet) Figure out how to do it for aoti
-- [ ] **torch/_inductor/codegen/mps.py:1278** - # TODO(malfet): Is upper bound inclusive or exclusive?
-- [ ] **torch/_inductor/codegen/nv_universal_gemm/nv_universal_gemm.py:991** - # TODO(nikhilap): Enable heuristics for grouped GEMM
+- [ ] **torch/_inductor/codegen/mps.py:1245** - # TODO(malfet) Figure out how to do it for aoti
+- [ ] **torch/_inductor/codegen/mps.py:1283** - # TODO(malfet): Is upper bound inclusive or exclusive?
+- [ ] **torch/_inductor/codegen/nv_universal_gemm/nv_universal_gemm.py:993** - # TODO(nikhilap): Enable heuristics for grouped GEMM
 - [ ] **torch/_inductor/codegen/pallas.py:985** - # TODO: Implement explicit bounds checking with assertions if needed
 - [ ] **torch/_inductor/codegen/pallas.py:1894** - # TODO: TMA supports float64 for loading but current JAX Mosaic GPU
-- [ ] **torch/_inductor/codegen/simd.py:1181** - # TODO instead of trying to blindly find complicated exprs, we should hoist the
-- [ ] **torch/_inductor/codegen/simd.py:1296** - # TODO(jansel): do we need a reshape here?
-- [ ] **torch/_inductor/codegen/simd.py:3317** - # TODO: do more validation here
-- [ ] **torch/_inductor/codegen/simd.py:3617** - # TODO: Share the parent-kernel pipeline and specialize only stage emission.
-- [ ] **torch/_inductor/codegen/simd.py:4167** - # TODO: Coalesce looped sub-parent lane loads into one parent-width load.
-- [ ] **torch/_inductor/codegen/simd.py:4483** - # TODO - use split ranges ?
-- [ ] **torch/_inductor/codegen/simd.py:5808** - # TODO: incorporate exact bitwidth, and read/write
-- [ ] **torch/_inductor/codegen/simd.py:5837** - # TODO, add tests, reduction splits if config.triton.tile_reductions
-- [ ] **torch/_inductor/codegen/simd.py:5838** - # TODO: we should ignore tiny increases in score for extra splits
-- [ ] **torch/_inductor/codegen/simd.py:5934** - # TODO - look into, occurs with dynamic shapes often
-- [ ] **torch/_inductor/codegen/simd.py:6041** - # # TODO: enable by default
-- [ ] **torch/_inductor/codegen/simd.py:6101** - # TODO: These tiling decisions (equality, ordering, divisibility)
-- [ ] **torch/_inductor/codegen/triton.py:999** - # TODO: This is wrong, when lhs, rhs > 2**53, Python does a higher
-- [ ] **torch/_inductor/codegen/triton.py:1496** - # TODO - register these ops as having divergent dtype
-- [ ] **torch/_inductor/codegen/triton.py:1671** - # TODO : track the value of outside of mask region with cse
-- [ ] **torch/_inductor/codegen/triton.py:1703** - # TODO: Optimize - We don't need both operands to be zeroed except NaN * 0
-- [ ] **torch/_inductor/codegen/triton.py:2793** - # TODO: even if the strides are not in descending order the strides
-- [ ] **torch/_inductor/codegen/triton.py:3344** - # TODO: min block size may be too large / introduce redundancy
-- [ ] **torch/_inductor/codegen/triton.py:4507** - # TODO: Once the shape propagation PR lands, reimplement this logic:
-- [ ] **torch/_inductor/codegen/triton.py:7352** - # TODO: Peel the final partial tile so full tiles skip this mask.
-- [ ] **torch/_inductor/codegen/triton.py:7915** - # TODO - rnumel should be reasonably close to power of 2
-- [ ] **torch/_inductor/codegen/triton.py:7920** - # TODO - need more detailed register analysis
-- [ ] **torch/_inductor/codegen/triton.py:8337** - # TODO(jansel): if there are constants, we shouldn't bother passing them as args
-- [ ] **torch/_inductor/codegen/triton.py:9006** - # TODO(voz): Ostensibly, we should not need this. But there are cases where C++ codegen does
-- [ ] **torch/_inductor/codegen/triton.py:9127** - # TODO - would be better as a hook in triton do_bench that reset
-- [ ] **torch/_inductor/codegen/triton.py:9160** - # TODO(jansel): scan does not yet work with cooperative reductions
+- [ ] **torch/_inductor/codegen/simd.py:1187** - # TODO instead of trying to blindly find complicated exprs, we should hoist the
+- [ ] **torch/_inductor/codegen/simd.py:1302** - # TODO(jansel): do we need a reshape here?
+- [ ] **torch/_inductor/codegen/simd.py:3323** - # TODO: do more validation here
+- [ ] **torch/_inductor/codegen/simd.py:3623** - # TODO: Share the parent-kernel pipeline and specialize only stage emission.
+- [ ] **torch/_inductor/codegen/simd.py:4173** - # TODO: Coalesce looped sub-parent lane loads into one parent-width load.
+- [ ] **torch/_inductor/codegen/simd.py:4489** - # TODO - use split ranges ?
+- [ ] **torch/_inductor/codegen/simd.py:5839** - # TODO: incorporate exact bitwidth, and read/write
+- [ ] **torch/_inductor/codegen/simd.py:5868** - # TODO, add tests, reduction splits if config.triton.tile_reductions
+- [ ] **torch/_inductor/codegen/simd.py:5869** - # TODO: we should ignore tiny increases in score for extra splits
+- [ ] **torch/_inductor/codegen/simd.py:5965** - # TODO - look into, occurs with dynamic shapes often
+- [ ] **torch/_inductor/codegen/simd.py:6072** - # # TODO: enable by default
+- [ ] **torch/_inductor/codegen/simd.py:6132** - # TODO: These tiling decisions (equality, ordering, divisibility)
+- [ ] **torch/_inductor/codegen/triton.py:1000** - # TODO: This is wrong, when lhs, rhs > 2**53, Python does a higher
+- [ ] **torch/_inductor/codegen/triton.py:1515** - # TODO - register these ops as having divergent dtype
+- [ ] **torch/_inductor/codegen/triton.py:1694** - # TODO : track the value of outside of mask region with cse
+- [ ] **torch/_inductor/codegen/triton.py:1726** - # TODO: Optimize - We don't need both operands to be zeroed except NaN * 0
+- [ ] **torch/_inductor/codegen/triton.py:2819** - # TODO: even if the strides are not in descending order the strides
+- [ ] **torch/_inductor/codegen/triton.py:3370** - # TODO: min block size may be too large / introduce redundancy
+- [ ] **torch/_inductor/codegen/triton.py:4533** - # TODO: Once the shape propagation PR lands, reimplement this logic:
+- [ ] **torch/_inductor/codegen/triton.py:7380** - # TODO: Peel the final partial tile so full tiles skip this mask.
+- [ ] **torch/_inductor/codegen/triton.py:7943** - # TODO - rnumel should be reasonably close to power of 2
+- [ ] **torch/_inductor/codegen/triton.py:7948** - # TODO - need more detailed register analysis
+- [ ] **torch/_inductor/codegen/triton.py:8365** - # TODO(jansel): if there are constants, we shouldn't bother passing them as args
+- [ ] **torch/_inductor/codegen/triton.py:9034** - # TODO(voz): Ostensibly, we should not need this. But there are cases where C++ codegen does
+- [ ] **torch/_inductor/codegen/triton.py:9155** - # TODO - would be better as a hook in triton do_bench that reset
+- [ ] **torch/_inductor/codegen/triton.py:9188** - # TODO(jansel): scan does not yet work with cooperative reductions
 - [ ] **torch/_inductor/codegen/triton_combo_kernel.py:227** - # TODO benchmark the performance when large pointwise nodes combining with others
 - [ ] **torch/_inductor/codegen/triton_combo_kernel.py:355** - # TODO support combination of kernels with different block dimensions
 - [ ] **torch/_inductor/codegen/triton_combo_kernel.py:1657** - # TODO: is it correct to use the first sub kernel's heuristics?
@@ -204,18 +204,18 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/compiler_bisector.py:72** - # TODO - add more - fusions ?
 - [ ] **torch/_inductor/compiler_bisector.py:565** - # TODO graph bisecting is not well composed with lowering
 - [ ] **torch/_inductor/config.py:679** - # TODO: @bobrenjc93 to roll this out to a few internal models to ensure this works
-- [ ] **torch/_inductor/config.py:982** - # TODO(xuanzh): harden this to make it non optional
-- [ ] **torch/_inductor/config.py:1162** - # TODO: Route pointwise and reduction consumers through their respective modes.
-- [ ] **torch/_inductor/config.py:1433** - # TODO - need estimated and profile based version
-- [ ] **torch/_inductor/config.py:1499** - # TODO(ivankobzarev): change default to "error" after real-world testing.
-- [ ] **torch/_inductor/config.py:1597** - # TODO: Set directly after internal rollout.
-- [ ] **torch/_inductor/config.py:1813** - # TODO: remove later
-- [ ] **torch/_inductor/config.py:2168** - # TODO - need to debug why this prevents cleanup
-- [ ] **torch/_inductor/config.py:2420** - # TODO(#191012): remove use_block_ptr entirely (this flag + the block-pointer
-- [ ] **torch/_inductor/config.py:2464** - # Should TMA store be enable from templates. TODO: Remove once we
-- [ ] **torch/_inductor/config.py:2642** - # TODO: Move this into metadata
-- [ ] **torch/_inductor/config.py:2646** - # TODO: Move this into metadata
-- [ ] **torch/_inductor/config.py:2668** - # TODO: Move this somewhere else, since it's no longer really a config
+- [ ] **torch/_inductor/config.py:984** - # TODO(xuanzh): harden this to make it non optional
+- [ ] **torch/_inductor/config.py:1164** - # TODO: Route pointwise and reduction consumers through their respective modes.
+- [ ] **torch/_inductor/config.py:1444** - # TODO - need estimated and profile based version
+- [ ] **torch/_inductor/config.py:1510** - # TODO(ivankobzarev): change default to "error" after real-world testing.
+- [ ] **torch/_inductor/config.py:1608** - # TODO: Set directly after internal rollout.
+- [ ] **torch/_inductor/config.py:1824** - # TODO: remove later
+- [ ] **torch/_inductor/config.py:2179** - # TODO - need to debug why this prevents cleanup
+- [ ] **torch/_inductor/config.py:2431** - # TODO(#191012): remove use_block_ptr entirely (this flag + the block-pointer
+- [ ] **torch/_inductor/config.py:2475** - # Should TMA store be enable from templates. TODO: Remove once we
+- [ ] **torch/_inductor/config.py:2653** - # TODO: Move this into metadata
+- [ ] **torch/_inductor/config.py:2657** - # TODO: Move this into metadata
+- [ ] **torch/_inductor/config.py:2679** - # TODO: Move this somewhere else, since it's no longer really a config
 - [ ] **torch/_inductor/constant_folding.py:217** - # TODO - fix errors with this
 - [ ] **torch/_inductor/constant_folding.py:224** - # TODO - constant folding triton kernel returns the inputs -- fix this
 - [ ] **torch/_inductor/constant_folding.py:233** - # TODO - more complicated strategy
@@ -232,14 +232,14 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/cudagraph_trees.py:3328** - # TODO: we could also allow the these weak refs to continue to be allocated,
 - [ ] **torch/_inductor/decomposition.py:304** - # TODO: check if XE4 still need this fallback
 - [ ] **torch/_inductor/decomposition.py:494** - # TODO: Re-enable for mps once our reductions are performant enough
-- [ ] **torch/_inductor/decomposition.py:572** - # todo: Look into why and fix it (hopefully)
-- [ ] **torch/_inductor/decomposition.py:574** - # TODO: Re-enable for mps once our reductions are performant enough
-- [ ] **torch/_inductor/decomposition.py:1194** - # TODO(aakhundov): replace this (and the above) Any by more
+- [ ] **torch/_inductor/decomposition.py:579** - # todo: Look into why and fix it (hopefully)
+- [ ] **torch/_inductor/decomposition.py:581** - # TODO: Re-enable for mps once our reductions are performant enough
+- [ ] **torch/_inductor/decomposition.py:1201** - # TODO(aakhundov): replace this (and the above) Any by more
 - [ ] **torch/_inductor/dependencies.py:207** - # TODO: Retain dropped dimension positions during dependency
 - [ ] **torch/_inductor/dependencies.py:637** - # TODO(jansel): explore this further normalization
 - [ ] **torch/_inductor/dependencies.py:688** - # TODO: check call sites
-- [ ] **torch/_inductor/distributed_autotune.py:251** - # TODO: Do we really need to externally compute this value? If it's
-- [ ] **torch/_inductor/distributed_autotune.py:276** - # TODO: It seems like it would be better if the template could provide
+- [ ] **torch/_inductor/distributed_autotune.py:252** - # TODO: Do we really need to externally compute this value? If it's
+- [ ] **torch/_inductor/distributed_autotune.py:277** - # TODO: It seems like it would be better if the template could provide
 - [ ] **torch/_inductor/dtype_propagation.py:249** - # TODO - we avoid calling this in codegen, needs work for non codegen use cases
 - [ ] **torch/_inductor/dtype_propagation.py:413** - # TODO - need to handle multiple outputs
 - [ ] **torch/_inductor/dtype_propagation.py:469** - # TODO - way of registering dtype for op in backend
@@ -259,12 +259,12 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/fx_passes/freezing_patterns.py:60** - # TODO: remove the need to run fake_tensor_prop on the whole model.
 - [ ] **torch/_inductor/fx_passes/fuse_attention.py:949** - # TODO: the scalar behind a tensorified SymFloat scale (e.g. head_dim**0.5
 - [ ] **torch/_inductor/fx_passes/fuse_attention.py:1091** - # we could also generate all these patterns in 3d.. TODO
-- [ ] **torch/_inductor/fx_passes/joint_graph.py:141** - # TODO - decompose/type promote to avoid this
-- [ ] **torch/_inductor/fx_passes/joint_graph.py:462** - # TODO: cat, more indexing
-- [ ] **torch/_inductor/fx_passes/joint_graph.py:463** - # TODO - do on cpu to avoid syncs
-- [ ] **torch/_inductor/fx_passes/joint_graph.py:557** - # TODO: Investigate generalizing this to cuDNN, CPU Flash, and overrideable fused attention.
-- [ ] **torch/_inductor/fx_passes/joint_graph.py:645** - # TODO - not sure about lossy uint->python value->uint conversions
-- [ ] **torch/_inductor/fx_passes/joint_graph.py:1271** - # TODO: the pattern can be updated to support the case that index tensor
+- [ ] **torch/_inductor/fx_passes/joint_graph.py:142** - # TODO - decompose/type promote to avoid this
+- [ ] **torch/_inductor/fx_passes/joint_graph.py:463** - # TODO: cat, more indexing
+- [ ] **torch/_inductor/fx_passes/joint_graph.py:464** - # TODO - do on cpu to avoid syncs
+- [ ] **torch/_inductor/fx_passes/joint_graph.py:558** - # TODO: Investigate generalizing this to cuDNN, CPU Flash, and overrideable fused attention.
+- [ ] **torch/_inductor/fx_passes/joint_graph.py:646** - # TODO - not sure about lossy uint->python value->uint conversions
+- [ ] **torch/_inductor/fx_passes/joint_graph.py:1272** - # TODO: the pattern can be updated to support the case that index tensor
 - [ ] **torch/_inductor/fx_passes/micro_pipeline_tp.py:653** - # TODO: explore unifying the _Matmul and _ScaledMatmul approaches to handling reshapes.
 - [ ] **torch/_inductor/fx_passes/misc_patterns.py:238** - # TODO: Add pattern for cvt.rn.bf16x2.ue8m0x2 (e8m0 -> bf16 conversion)
 - [ ] **torch/_inductor/fx_passes/mkldnn_fusion.py:1270** - # TODO: Support dynamic shape case for MKLDNN conv transpose.
@@ -279,7 +279,7 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/fx_passes/pad_mm.py:405** - # TODO - see issue https://github.com/pytorch/pytorch/issues/128889
 - [ ] **torch/_inductor/fx_passes/pad_mm.py:442** - # TODO: Build a learned model which would be better than this heuristic
 - [ ] **torch/_inductor/fx_passes/post_grad.py:824** - # TODO: error-prone for any tuple-valued node; disambiguate on its meta["val"].
-- [ ] **torch/_inductor/fx_passes/post_grad.py:2618** - # TODO: to support other reductions like sum, would need to skip
+- [ ] **torch/_inductor/fx_passes/post_grad.py:2606** - # TODO: to support other reductions like sum, would need to skip
 - [ ] **torch/_inductor/fx_passes/pre_grad.py:414** - # TODO: move efficient_conv_bn_eval_pass to the fusions dict too.
 - [ ] **torch/_inductor/fx_passes/pre_grad.py:613** - # TODO: support kwargs.
 - [ ] **torch/_inductor/fx_passes/quantization.py:632** - # TODO Ensure sum is safe and remove such check, i.e.,
@@ -290,43 +290,43 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/fx_passes/split_cat.py:259** - # TODO dynamic_shapes with assume_static_by_default=False fails while AOT Autograd tracing.
 - [ ] **torch/_inductor/fx_passes/split_cat.py:1722** - # TODO dynamic_shapes with assume_static_by_default=False fails while AOT Autograd tracing.
 - [ ] **torch/_inductor/fx_passes/split_cat.py:1769** - # TODO dynamic_shapes with assume_static_by_default=False fails while AOT Autograd tracing.
-- [ ] **torch/_inductor/graph.py:666** - # TODO: this should not be needed once #93059 lands
-- [ ] **torch/_inductor/graph.py:668** - # TODO: make a dedicated UnknownSource for this?
-- [ ] **torch/_inductor/graph.py:913** - # TODO - get different values per hardware
-- [ ] **torch/_inductor/graph.py:1375** - # todo(chilli): We can remove the last check once we turn buffers into
-- [ ] **torch/_inductor/graph.py:1400** - # TODO(jansel): handle input aliasing
-- [ ] **torch/_inductor/graph.py:1481** - # TODO: should really switch to "needs_fixed_stride" constraint on these
-- [ ] **torch/_inductor/graph.py:2280** - # TODO(jansel): introduce a store vs inline choice
-- [ ] **torch/_inductor/graph.py:2514** - # TODO(Eikan): Only support mixing cpu and other device now.
-- [ ] **torch/_inductor/graph.py:3131** - # TODO. Revisit this once the logging API is more mature
+- [ ] **torch/_inductor/graph.py:674** - # TODO: this should not be needed once #93059 lands
+- [ ] **torch/_inductor/graph.py:676** - # TODO: make a dedicated UnknownSource for this?
+- [ ] **torch/_inductor/graph.py:921** - # TODO - get different values per hardware
+- [ ] **torch/_inductor/graph.py:1407** - # todo(chilli): We can remove the last check once we turn buffers into
+- [ ] **torch/_inductor/graph.py:1432** - # TODO(jansel): handle input aliasing
+- [ ] **torch/_inductor/graph.py:1513** - # TODO: should really switch to "needs_fixed_stride" constraint on these
+- [ ] **torch/_inductor/graph.py:2312** - # TODO(jansel): introduce a store vs inline choice
+- [ ] **torch/_inductor/graph.py:2546** - # TODO(Eikan): Only support mixing cpu and other device now.
+- [ ] **torch/_inductor/graph.py:3163** - # TODO. Revisit this once the logging API is more mature
 - [ ] **torch/_inductor/heuristics/template/decompose_k.py:39** - # TODO(coconutruben): enable decompose k on other devices (xpu, cpu, mps, mtia)
 - [ ] **torch/_inductor/heuristics/template/nv_universal_gemm.py:29** - # TODO(nikhilap): Extend config key for stages/split_k https://github.com/pytorch/pytorch/issues/177578
 - [ ] **torch/_inductor/heuristics/template/nv_universal_gemm.py:686** - #   TODO(nikhilap): Update when nvMatmulHeuristics supports CUTLASS 4
-- [ ] **torch/_inductor/heuristics/template/triton.py:205** - # TODO(rocm-origami): replace these wrappers with public accessors when the
-- [ ] **torch/_inductor/heuristics/template/triton.py:431** - # TODO(coconutruben): remove this once mm_plus_mm and tests support scaling
-- [ ] **torch/_inductor/heuristics/template/triton.py:806** - # TODO: Unify with other gemm patterns, mm_plus_mm currently follows
-- [ ] **torch/_inductor/heuristics/template/triton.py:1175** - # TODO make a BaseDeviceConfigHeuristics to handle different device configuration in its own implementation.
-- [ ] **torch/_inductor/heuristics/template/triton.py:1218** - # TODO: generalize this threshold for ROCm devices.
-- [ ] **torch/_inductor/heuristics/template/triton.py:2557** - # see TODO at top of file for the upstream-API migration plan.
-- [ ] **torch/_inductor/heuristics/template/triton.py:2820** - # TODO(coconutruben): remove this once all tests work
-- [ ] **torch/_inductor/heuristics/template/triton.py:3424** - # TODO(coconutruben): deprecate once autoheuristic is deprecated
-- [ ] **torch/_inductor/heuristics/template/triton.py:3751** - # TODO(coconutruben): remove this once we have validated exhaustive support
-- [ ] **torch/_inductor/heuristics/template/triton.py:3771** - # TODO(coconutruben): remove this once we have validated exhaustive support
-- [ ] **torch/_inductor/heuristics/template/triton.py:3793** - # TODO(coconutruben): replace with template.name once templates are importable
-- [ ] **torch/_inductor/heuristics/template/triton.py:3795** - # TODO(coconutruben): replace with template.name once templates are importable
-- [ ] **torch/_inductor/heuristics/template/triton.py:3815** - # TODO(coconutruben): deprecate once autoheuristic is deprecated
-- [ ] **torch/_inductor/heuristics/template/triton.py:3861** - # TODO(coconutruben): remove this once we have validated exhaustive support
-- [ ] **torch/_inductor/heuristics/template/triton.py:3885** - # TODO(coconutruben): remove this once we have validated exhaustive support
-- [ ] **torch/_inductor/heuristics/template/triton.py:3915** - # TODO(coconutruben): remove this once we have validated exhaustive support
-- [ ] **torch/_inductor/heuristics/template/triton.py:3930** - # TODO(coconutruben): remove this once we have validated exhaustive support
-- [ ] **torch/_inductor/heuristics/template/triton.py:3947** - # TODO(coconutruben): remove this once we have validated exhaustive support
-- [ ] **torch/_inductor/heuristics/template/triton.py:3967** - # TODO(etaf): Design proper exhaustive search space for XPU.
-- [ ] **torch/_inductor/heuristics/template/triton.py:4009** - # TODO(coconutruben): remove this once we have validated exhaustive support
-- [ ] **torch/_inductor/heuristics/template/triton.py:4024** - # TODO(coconutruben): remove this once we have validated exhaustive support
-- [ ] **torch/_inductor/heuristics/template/triton.py:4044** - # TODO(coconutruben): remove this once we have validated exhaustive support
-- [ ] **torch/_inductor/heuristics/template/triton.py:4074** - # TODO(coconutruben): remove this once we have validated exhaustive support
-- [ ] **torch/_inductor/heuristics/template/triton.py:4089** - # TODO(coconutruben): remove this once we have validated exhaustive support
-- [ ] **torch/_inductor/heuristics/template/triton.py:4106** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:207** - # TODO(rocm-origami): replace these wrappers with public accessors when the
+- [ ] **torch/_inductor/heuristics/template/triton.py:433** - # TODO(coconutruben): remove this once mm_plus_mm and tests support scaling
+- [ ] **torch/_inductor/heuristics/template/triton.py:808** - # TODO: Unify with other gemm patterns, mm_plus_mm currently follows
+- [ ] **torch/_inductor/heuristics/template/triton.py:1178** - # TODO make a BaseDeviceConfigHeuristics to handle different device configuration in its own implementation.
+- [ ] **torch/_inductor/heuristics/template/triton.py:1221** - # TODO: generalize this threshold for ROCm devices.
+- [ ] **torch/_inductor/heuristics/template/triton.py:2559** - # see TODO at top of file for the upstream-API migration plan.
+- [ ] **torch/_inductor/heuristics/template/triton.py:2822** - # TODO(coconutruben): remove this once all tests work
+- [ ] **torch/_inductor/heuristics/template/triton.py:3426** - # TODO(coconutruben): deprecate once autoheuristic is deprecated
+- [ ] **torch/_inductor/heuristics/template/triton.py:3847** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:3867** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:3889** - # TODO(coconutruben): replace with template.name once templates are importable
+- [ ] **torch/_inductor/heuristics/template/triton.py:3891** - # TODO(coconutruben): replace with template.name once templates are importable
+- [ ] **torch/_inductor/heuristics/template/triton.py:3911** - # TODO(coconutruben): deprecate once autoheuristic is deprecated
+- [ ] **torch/_inductor/heuristics/template/triton.py:3957** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:3981** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:4011** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:4026** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:4043** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:4063** - # TODO(etaf): Design proper exhaustive search space for XPU.
+- [ ] **torch/_inductor/heuristics/template/triton.py:4105** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:4120** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:4140** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:4170** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:4185** - # TODO(coconutruben): remove this once we have validated exhaustive support
+- [ ] **torch/_inductor/heuristics/template/triton.py:4202** - # TODO(coconutruben): remove this once we have validated exhaustive support
 - [ ] **torch/_inductor/heuristics/triton_codegen/reduction.py:811** - # TODO(Intel): CUDA uses num_warps = 1 to disable shared memory.
 - [ ] **torch/_inductor/index_propagation.py:369** - # TODO Perhaps move this logic to the simplify indexing pass
 - [ ] **torch/_inductor/ir.py:1141** - # todo(chilli): I think it would be better for IRNode to directly set
@@ -341,19 +341,19 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/ir.py:4146** - # TODO: These symbols may not escape, if they don't assert so and
 - [ ] **torch/_inductor/ir.py:4442** - # TODO(rec): can this really happen?
 - [ ] **torch/_inductor/ir.py:5969** - # TODO: Consider extending tl.dot codegen to support arbitrary loop orders.
-- [ ] **torch/_inductor/ir.py:6753** - # TODO: Factor out a common DSL template buffer base shared with
-- [ ] **torch/_inductor/ir.py:7824** - # TODO(jansel): impose layout preference on realized buffer
-- [ ] **torch/_inductor/ir.py:7949** - # TODO - Storage to InputBuffer
-- [ ] **torch/_inductor/ir.py:7985** - # TODO: could also be good to have a codegen fix to recognize overlapping elements
-- [ ] **torch/_inductor/ir.py:8094** - # TODO move this to the more proper places
-- [ ] **torch/_inductor/ir.py:8104** - # TODO: combine this with require_contiguous after
-- [ ] **torch/_inductor/ir.py:8368** - # TODO: I can't tell if the symbols here are temporary
-- [ ] **torch/_inductor/ir.py:9658** - # TODO fix
-- [ ] **torch/_inductor/ir.py:9665** - # TODO: when we start compiling in C++20, annotate with [[unlikely]].
-- [ ] **torch/_inductor/ir.py:11330** - # TODO(anijain2305) - Support sym expr as operands in future.
-- [ ] **torch/_inductor/ir.py:12323** - # TODO(yifu): add a pre-grad pass to validate the correctness of collective
-- [ ] **torch/_inductor/kernel/bmm.py:264** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
-- [ ] **torch/_inductor/kernel/bmm.py:406** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
+- [ ] **torch/_inductor/ir.py:6760** - # TODO: Factor out a common DSL template buffer base shared with
+- [ ] **torch/_inductor/ir.py:7831** - # TODO(jansel): impose layout preference on realized buffer
+- [ ] **torch/_inductor/ir.py:7956** - # TODO - Storage to InputBuffer
+- [ ] **torch/_inductor/ir.py:7992** - # TODO: could also be good to have a codegen fix to recognize overlapping elements
+- [ ] **torch/_inductor/ir.py:8101** - # TODO move this to the more proper places
+- [ ] **torch/_inductor/ir.py:8111** - # TODO: combine this with require_contiguous after
+- [ ] **torch/_inductor/ir.py:8375** - # TODO: I can't tell if the symbols here are temporary
+- [ ] **torch/_inductor/ir.py:9665** - # TODO fix
+- [ ] **torch/_inductor/ir.py:9672** - # TODO: when we start compiling in C++20, annotate with [[unlikely]].
+- [ ] **torch/_inductor/ir.py:11337** - # TODO(anijain2305) - Support sym expr as operands in future.
+- [ ] **torch/_inductor/ir.py:12330** - # TODO(yifu): add a pre-grad pass to validate the correctness of collective
+- [ ] **torch/_inductor/kernel/bmm.py:265** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
+- [ ] **torch/_inductor/kernel/bmm.py:411** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
 - [ ] **torch/_inductor/kernel/conv.py:535** - # TODO: This does not guard on the stride order decision,
 - [ ] **torch/_inductor/kernel/conv.py:571** - # TODO: check if it's beneficial to convert Conv1d to Conv2d and then
 - [ ] **torch/_inductor/kernel/conv.py:576** - # TODO maybe we can convert weights to channels last just once before
@@ -372,19 +372,19 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/kernel/flex/flex_decoding.py:280** - # TODO: fix autotuning.
 - [ ] **torch/_inductor/kernel/flex/flex_decoding.py:346** - # TODO: This feels sketchy
 - [ ] **torch/_inductor/kernel/flex_gemm/lowering.py:695** - # TODO: Upstream block-scaled concat_layout support to QuACK if needed.
-- [ ] **torch/_inductor/kernel/mm.py:656** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
-- [ ] **torch/_inductor/kernel/mm.py:826** - # TODO(coconutruben): remove once we deprecate ah
-- [ ] **torch/_inductor/kernel/mm.py:890** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
-- [ ] **torch/_inductor/kernel/mm.py:976** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
-- [ ] **torch/_inductor/kernel/mm.py:1125** - # TODO(coconturuben): support V.choices.get_mm_configs for sparse_semi_structured_mm
-- [ ] **torch/_inductor/kernel/mm.py:1731** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
-- [ ] **torch/_inductor/kernel/mm.py:1805** - # TODO (paulzhan): There is no template that exists for bias and TMA
-- [ ] **torch/_inductor/kernel/mm.py:1946** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
-- [ ] **torch/_inductor/kernel/mm.py:2073** - # TODO (paulzhan): There is no template that exists for bias and TMA
-- [ ] **torch/_inductor/kernel/mm.py:2240** - # TODO: is there a cleaner way to ensure aten.mm is always included?
-- [ ] **torch/_inductor/kernel/mm_common.py:170** - # TODO: support block ptr
-- [ ] **torch/_inductor/kernel/mm_common.py:207** - # TODO : support when size = 1
-- [ ] **torch/_inductor/kernel/mm_grouped.py:353** - # TODO: Revisit whether 16-byte alignment would be beneficial for gfx1250.
+- [ ] **torch/_inductor/kernel/mm.py:646** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
+- [ ] **torch/_inductor/kernel/mm.py:816** - # TODO(coconutruben): remove once we deprecate ah
+- [ ] **torch/_inductor/kernel/mm.py:880** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
+- [ ] **torch/_inductor/kernel/mm.py:961** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
+- [ ] **torch/_inductor/kernel/mm.py:1114** - # TODO(coconturuben): support V.choices.get_mm_configs for sparse_semi_structured_mm
+- [ ] **torch/_inductor/kernel/mm.py:1720** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
+- [ ] **torch/_inductor/kernel/mm.py:1794** - # TODO (paulzhan): There is no template that exists for bias and TMA
+- [ ] **torch/_inductor/kernel/mm.py:1935** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
+- [ ] **torch/_inductor/kernel/mm.py:2062** - # TODO (paulzhan): There is no template that exists for bias and TMA
+- [ ] **torch/_inductor/kernel/mm.py:2229** - # TODO: is there a cleaner way to ensure aten.mm is always included?
+- [ ] **torch/_inductor/kernel/mm_common.py:192** - # TODO: support block ptr
+- [ ] **torch/_inductor/kernel/mm_common.py:229** - # TODO : support when size = 1
+- [ ] **torch/_inductor/kernel/mm_grouped.py:354** - # TODO: Revisit whether 16-byte alignment would be beneficial for gfx1250.
 - [ ] **torch/_inductor/kernel/mm_plus_mm.py:48** - # TODO(coconutruben): integrate into MMKernelInputs when all callsites use that
 - [ ] **torch/_inductor/kernel/mm_plus_mm.py:64** - # TODO(jansel): support different K values when this is fixed:
 - [ ] **torch/_inductor/kernel/vendored_templates/flydsl/kernels/gemm_gfx950.py:493** - # TODO: Move common ROCm synchronization and buffer-load helpers to FlyDSL.
@@ -399,21 +399,21 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/lowering.py:2354** - # TODO <leslie> Remove this fallback when we support vectorization
 - [ ] **torch/_inductor/lowering.py:2440** - # TODO: We observed negative performance impact of pointwise_cat optimization on CPU so disabled it.
 - [ ] **torch/_inductor/lowering.py:2799** - # TODO: don't guard on static shape here
-- [ ] **torch/_inductor/lowering.py:2881** - # TODO: delete once triton adds native support
-- [ ] **torch/_inductor/lowering.py:3125** - # TODO: mlazos reevaluate if we want to codegen something different
-- [ ] **torch/_inductor/lowering.py:3517** - # TODO: combine this with require_contiguous after
-- [ ] **torch/_inductor/lowering.py:4450** - # deferred_runtime_asserts, TODO: try this assert out
-- [ ] **torch/_inductor/lowering.py:5178** - # TODO: use a masked store for this. currently only triton
-- [ ] **torch/_inductor/lowering.py:5346** - # TODO: Need to support more reduction type
-- [ ] **torch/_inductor/lowering.py:6022** - # TODO: Generalize to other max pooling flavors
-- [ ] **torch/_inductor/lowering.py:6471** - # TODO: should we force these to be realized?
-- [ ] **torch/_inductor/lowering.py:6869** - # TODO: remove this when #100331 is merged. We only do this
-- [ ] **torch/_inductor/lowering.py:9315** - # TODO: when graph_partition is enabled, skip - partitioning handles control flow
-- [ ] **torch/_inductor/lowering.py:9332** - # TODO: cudagraph support for torch.switch is not yet implemented; always disable.
-- [ ] **torch/_inductor/lowering.py:9344** - # TODO: when graph_partition is enabled, skip - partitioning handles control flow
-- [ ] **torch/_inductor/lowering.py:9515** - # TODO: if control_deps ever wraps ops that truly mutate a pass-through
-- [ ] **torch/_inductor/lowering.py:9553** - # todo getattr
-- [ ] **torch/_inductor/lowering.py:9825** - # TODO: Optimize to process pairs (pack=2) by creating a custom Pointwise
+- [ ] **torch/_inductor/lowering.py:2882** - # TODO: delete once triton adds native support
+- [ ] **torch/_inductor/lowering.py:3129** - # TODO: mlazos reevaluate if we want to codegen something different
+- [ ] **torch/_inductor/lowering.py:3521** - # TODO: combine this with require_contiguous after
+- [ ] **torch/_inductor/lowering.py:4454** - # deferred_runtime_asserts, TODO: try this assert out
+- [ ] **torch/_inductor/lowering.py:5182** - # TODO: use a masked store for this. currently only triton
+- [ ] **torch/_inductor/lowering.py:5350** - # TODO: Need to support more reduction type
+- [ ] **torch/_inductor/lowering.py:6026** - # TODO: Generalize to other max pooling flavors
+- [ ] **torch/_inductor/lowering.py:6475** - # TODO: should we force these to be realized?
+- [ ] **torch/_inductor/lowering.py:6873** - # TODO: remove this when #100331 is merged. We only do this
+- [ ] **torch/_inductor/lowering.py:9319** - # TODO: when graph_partition is enabled, skip - partitioning handles control flow
+- [ ] **torch/_inductor/lowering.py:9336** - # TODO: cudagraph support for torch.switch is not yet implemented; always disable.
+- [ ] **torch/_inductor/lowering.py:9348** - # TODO: when graph_partition is enabled, skip - partitioning handles control flow
+- [ ] **torch/_inductor/lowering.py:9519** - # TODO: if control_deps ever wraps ops that truly mutate a pass-through
+- [ ] **torch/_inductor/lowering.py:9557** - # todo getattr
+- [ ] **torch/_inductor/lowering.py:9829** - # TODO: Optimize to process pairs (pack=2) by creating a custom Pointwise
 - [ ] **torch/_inductor/memory.py:1089** - # TODO: remove after ensuring OSS side is safe
 - [ ] **torch/_inductor/memory.py:1121** - # TODO: remove after ensuring OSS side is safe
 - [ ] **torch/_inductor/mkldnn_ir.py:138** - # TODO <Leslie> cleaned up the fake_tensor trace as Linear implementation
@@ -430,10 +430,10 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/output_code.py:612** - # TODO - ordered set
 - [ ] **torch/_inductor/output_code.py:1004** - # TODO: This could be better if we're ever able to serialize compiled
 - [ ] **torch/_inductor/package/package.py:132** - # TODO(angelayi): We shouldn't need to do this -- miniz should
-- [ ] **torch/_inductor/pattern_matcher.py:2180** - # TODO: Revisit the functionalize_rng_ops for lowmem dropout
-- [ ] **torch/_inductor/pattern_matcher.py:2490** - # TODO - fix schema
-- [ ] **torch/_inductor/pattern_matcher.py:3092** - # TODO - look into using aot autograd, asserting no mutating ops here
-- [ ] **torch/_inductor/pattern_matcher.py:3269** - # TODO: remove in follow up diff, used internally
+- [ ] **torch/_inductor/pattern_matcher.py:2219** - # TODO: Revisit the functionalize_rng_ops for lowmem dropout
+- [ ] **torch/_inductor/pattern_matcher.py:2529** - # TODO - fix schema
+- [ ] **torch/_inductor/pattern_matcher.py:3131** - # TODO - look into using aot autograd, asserting no mutating ops here
+- [ ] **torch/_inductor/pattern_matcher.py:3308** - # TODO: remove in follow up diff, used internally
 - [ ] **torch/_inductor/runtime/autotune_cache.py:389** - # TODO: Do we need to compute time_taken_ms and encode that somehow?
 - [ ] **torch/_inductor/runtime/autotune_cache.py:574** - # TODO: The autotune cache includes configs_hash in the key. The problem
 - [ ] **torch/_inductor/runtime/autotune_cache.py:633** - # TODO: check cache_dir() vs filename, then strip dirname
@@ -467,24 +467,22 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/scheduler.py:3311** - # todo: Calculate this - it's kinda annoying.
 - [ ] **torch/_inductor/scheduler.py:3402** - # TODO: Figure out what's going on
 - [ ] **torch/_inductor/scheduler.py:3529** - # TODO(xmfan): find a better heuristic to model FLOPS/latency relationship
-- [ ] **torch/_inductor/scheduler.py:3894** - # TODO(shunting) if this cause compilation time increase when
-- [ ] **torch/_inductor/scheduler.py:7209** - # TODO (PaulZhang12): Potentially support recompilation/benchmark for new strides
-- [ ] **torch/_inductor/scheduler.py:7581** - # TODO: Remove this check after all Triton templates support prologue fusion.
-- [ ] **torch/_inductor/scheduler.py:7684** - # TODO: Remove this check after all Triton templates support prologue fusion.
-- [ ] **torch/_inductor/scheduler.py:8092** - # TODO (PaulZhang12): Does not support fusions of templates with
-- [ ] **torch/_inductor/scheduler.py:9710** - # TODO Don't do loop reordering/reindexing for CPU for now.
-- [ ] **torch/_inductor/scheduler.py:10050** - # TODO: Measure fused memory first so coalesced fusions skip per-node analysis.
-- [ ] **torch/_inductor/scheduler.py:10107** - # TODO - make configurable per input, for instance, bias can fuse fp32 -> fp16 profitably
-- [ ] **torch/_inductor/scheduler.py:10116** - # TODO - would be nice to generalize this, however, we would need more explicit
-- [ ] **torch/_inductor/scheduler.py:10367** - # TODO: Replace this inherited parent-to-grouped compatibility proof
-- [ ] **torch/_inductor/select_algorithm.py:1430** - # TODO: we should have intermediary var shapes
-- [ ] **torch/_inductor/select_algorithm.py:2118** - # TODO: Maybe unify CUTLASSTemplateKernel to also use PartialRender for flexible epilogue fusion.
-- [ ] **torch/_inductor/select_algorithm.py:3031** - # TODO(nmacchioni): fix sympy division by zero
-- [ ] **torch/_inductor/select_algorithm.py:3576** - # TODO(AlnisM): Does tile_shape always exist?
-- [ ] **torch/_inductor/select_algorithm.py:4231** - # TODO(jgong5): support multi-template on CPU C++ backend
-- [ ] **torch/_inductor/select_algorithm.py:4237** - # TODO - assert that we have not mutating kernels here
-- [ ] **torch/_inductor/select_algorithm.py:4508** - # TODO(nmacchioni): remove this layer of abstraction
-- [ ] **torch/_inductor/select_algorithm.py:6435** - # TODO(coconutruben): replace this with taking KernelInputs as the
+- [ ] **torch/_inductor/scheduler.py:3896** - # TODO(shunting) if this cause compilation time increase when
+- [ ] **torch/_inductor/scheduler.py:7255** - # TODO (PaulZhang12): Potentially support recompilation/benchmark for new strides
+- [ ] **torch/_inductor/scheduler.py:8138** - # TODO (PaulZhang12): Does not support fusions of templates with
+- [ ] **torch/_inductor/scheduler.py:9756** - # TODO Don't do loop reordering/reindexing for CPU for now.
+- [ ] **torch/_inductor/scheduler.py:10096** - # TODO: Measure fused memory first so coalesced fusions skip per-node analysis.
+- [ ] **torch/_inductor/scheduler.py:10153** - # TODO - make configurable per input, for instance, bias can fuse fp32 -> fp16 profitably
+- [ ] **torch/_inductor/scheduler.py:10162** - # TODO - would be nice to generalize this, however, we would need more explicit
+- [ ] **torch/_inductor/scheduler.py:10413** - # TODO: Replace this inherited parent-to-grouped compatibility proof
+- [ ] **torch/_inductor/select_algorithm.py:1493** - # TODO: we should have intermediary var shapes
+- [ ] **torch/_inductor/select_algorithm.py:2235** - # TODO: Maybe unify CUTLASSTemplateKernel to also use PartialRender for flexible epilogue fusion.
+- [ ] **torch/_inductor/select_algorithm.py:3155** - # TODO(nmacchioni): fix sympy division by zero
+- [ ] **torch/_inductor/select_algorithm.py:3739** - # TODO(AlnisM): Does tile_shape always exist?
+- [ ] **torch/_inductor/select_algorithm.py:4394** - # TODO(jgong5): support multi-template on CPU C++ backend
+- [ ] **torch/_inductor/select_algorithm.py:4400** - # TODO - assert that we have not mutating kernels here
+- [ ] **torch/_inductor/select_algorithm.py:4678** - # TODO(nmacchioni): remove this layer of abstraction
+- [ ] **torch/_inductor/select_algorithm.py:6605** - # TODO(coconutruben): replace this with taking KernelInputs as the
 - [ ] **torch/_inductor/shape_propagation.py:78** - # TODO: fix me
 - [ ] **torch/_inductor/sizevars.py:995** - # TODO: This is NOT always sound for unbacked symints.  It can
 - [ ] **torch/_inductor/sizevars.py:1001** - # TODO shall we add a runtime assertion at least.
@@ -502,16 +500,16 @@ This tensor-compiler source mirror keeps the existing source-maintenance checkli
 - [ ] **torch/_inductor/utils.py:956** - # TODO: remove when support is added in triton
 - [ ] **torch/_inductor/utils.py:1958** - # TODO: Investigate why uint64 tensor creation causes overflow error:
 - [ ] **torch/_inductor/utils.py:2179** - # TODO we need to properly guard on this global
-- [ ] **torch/_inductor/utils.py:3201** - # TODO: Support AOTI for decomposeK
-- [ ] **torch/_inductor/utils.py:3468** - # TODO(jgong5): support dynamic shapes for n or k
-- [ ] **torch/_inductor/utils.py:3496** - # TODO(jgong5): support transposed input
-- [ ] **torch/_inductor/utils.py:4139** - # TODO: this is a temporary solution to ensure that we can identify torchrec's
-- [ ] **torch/_inductor/utils.py:4599** - # TODO(voz): It would be nice to enable this assert, but there are lots of tests that
-- [ ] **torch/_inductor/utils.py:4621** - # TODO(voz): Should we always have one anyway?
-- [ ] **torch/_inductor/utils.py:4814** - # TODO: remove when support is added in triton
-- [ ] **torch/_inductor/utils.py:4877** - # TODO should remove this op
-- [ ] **torch/_inductor/utils.py:5035** - # TODO: implement V3_BACKENDS_TUPLE
-- [ ] **torch/_inductor/utils.py:5356** - # TODO: change these two configs to default to None and use patch_config
+- [ ] **torch/_inductor/utils.py:3263** - # TODO: Support AOTI for decomposeK
+- [ ] **torch/_inductor/utils.py:3530** - # TODO(jgong5): support dynamic shapes for n or k
+- [ ] **torch/_inductor/utils.py:3558** - # TODO(jgong5): support transposed input
+- [ ] **torch/_inductor/utils.py:4201** - # TODO: this is a temporary solution to ensure that we can identify torchrec's
+- [ ] **torch/_inductor/utils.py:4661** - # TODO(voz): It would be nice to enable this assert, but there are lots of tests that
+- [ ] **torch/_inductor/utils.py:4683** - # TODO(voz): Should we always have one anyway?
+- [ ] **torch/_inductor/utils.py:4876** - # TODO: remove when support is added in triton
+- [ ] **torch/_inductor/utils.py:4939** - # TODO should remove this op
+- [ ] **torch/_inductor/utils.py:5097** - # TODO: implement V3_BACKENDS_TUPLE
+- [ ] **torch/_inductor/utils.py:5418** - # TODO: change these two configs to default to None and use patch_config
 - [ ] **torch/_inductor/virtualized.py:182** - # TODO: To be honest, I feel we probably should just error in this
 
 ## License
